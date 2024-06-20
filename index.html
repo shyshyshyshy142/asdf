@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ДрайвБезЗабот</h1>
+        <nav>
+            <ul>
+                <li><a href="index.php">Главная</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="catalog.php">Каталог</a></li>
+                <li class="action-btn right"><button class="btn" onclick="openModal('registration-modal')">Регистрация</button></li>
+                <li class="action-btn right" onclick="openModal('login-modal')"><button class="btn">Вход</button></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="header-image">
+        <img src="image/RR-EVQ-24MY-AUTOBIOGRAPHY-DRIVING-210623-09-6498d07284479.jpg" alt="Большая картинка" class="header-image" />
+    </div>
+
+
+<div id="registration-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('registration-modal')">&times;</span>
+        <h2>Регистрация</h2>
+        <form action="register.php" method="post">
+                <input type="text" placeholder='логин' name="login">
+                <input type="text" placeholder='пароль' name="pass" style="-webkit-text-security: circle">
+                <input type="text" placeholder='повторение пароля' name="repeatpass" style="-webkit-text-security: circle" >
+                <input type="text" placeholder='email' name="email">
+                <button type="submit">Зарегестрироватся</button>
+            </form>
+    </div>
+</div>
+
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('login-modal')">&times;</span>
+            <h2>Вход</h2>
+            <form action="login.php" method="post">
+                <input type="text" placeholder='логин' name="login">
+                <input type="text" placeholder='пароль' name="pass" style="-webkit-text-security: circle">
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="car-cards-container">
+        <?php
+            require_once('cards.php');
+        ?>
+    </div>
+    <div>
+    <main>
+        <section>
+            <h2>О нас</h2>
+            <p>«ДрайвБезЗабот».– это компания, специализирующаяся на сфере автопроката. Она предоставляет клиентам возможность арендовать качественные и надежные автомобили для полного комфорта в путешествиях и командировках. «2022» стремится к предоставлению выдающегося опыта аренды, обеспечивая клиентов современными и ухоженными транспортными средствами.</p>
+        </section>
+        
+        <section>
+            <h2>Услуги</h2>
+            <p>Здесь можно перечислить ваши услуги.</p>
+        </section>
+        
+        <section>
+            <h2>Контакты</h2>
+            <p>Здесь можно добавить контактную информацию.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Мой сайт</p>
+    </footer>
+    </div>
+    <script src="asd.js"></script>
+</body>
+</html>
